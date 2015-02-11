@@ -9,3 +9,5 @@ $who | sort –logfile > newfile
 
 # output the sorted contents of a file named IN.TXT into OUT.TXT, excluding duplicate entries.
 sort IN.TXT | uniq > OUT.TXT
+
+http://career.guru99.com/top-50-unix-interview-questions/
