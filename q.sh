@@ -11,3 +11,10 @@ $who | sort –logfile > newfile
 sort IN.TXT | uniq > OUT.TXT
 
 http://career.guru99.com/top-50-unix-interview-questions/
+
+# rename all jpg files in a folder with hashing key "mykey123"
+for file in `/bin/ls *.jpg`; do
+    hashedFileName=`echo -n ${file%.*} | openssl dgst -sha1 -hmac "myKey123"`;
+    mv $file $hashedFileName.jpg;
+done
+
