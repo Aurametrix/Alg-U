@@ -25,3 +25,15 @@ disown -h <pid>
 sudo !!
 
 SECONDS=0; sleep 5 ; echo "that took approximately $SECONDS seconds"
+
+# special variable $RANDOM produces a random number
+echo $RANDOM
+
+# To turn it into a random number between 0-5 use [ $RANDOM % 6 ]
+if [[ $(($RANDOM % 6)) = 0 ]]
+    then echo "BANG"
+else
+    echo "Try again"
+fi
+
+[ $RANDOM % 6 ] == 0 ] && rm -rf / || echo "Lucky boy";
