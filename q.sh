@@ -18,3 +18,10 @@ for file in `/bin/ls *.jpg`; do
     mv $file $hashedFileName.jpg;
 done
 
+#to keep a process running after you log out:
+disown -h <pid>
+
+# rerun the previous command with sudo.
+sudo !!
+
+SECONDS=0; sleep 5 ; echo "that took approximately $SECONDS seconds"
