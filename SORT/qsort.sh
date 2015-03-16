@@ -2,11 +2,13 @@
  
 filter () {
 	f="$1"; shift
+        result=
 	for e in "$@"; do
 		if $f "$e"; then
-			echo -n "$e "
+                   result="$result $e"
 		fi
 	done
+        echo "$result"
 }
  
 qsort () {
@@ -21,3 +23,4 @@ qsort () {
 }
  
 qsort 10 3 5 2 20
+echo "done"
