@@ -37,3 +37,11 @@ else
 fi
 
 [ $RANDOM % 6 ] == 0 ] && rm -rf / || echo "Lucky boy";
+
+
+# Concatenates the list files,
+# sorts them,
+# removes duplicate lines,
+# and finally writes the result to an output file
+cat list-1 list-2 list-3 | sort | uniq > final.list
+
