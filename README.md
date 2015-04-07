@@ -1,17 +1,19 @@
 Common shells
 
-sh – Bourne shell
+sh – Bourne shell  (bash -c 'paste <(echo 1) <(echo 2)')
 
-csh – C SHell
+csh – C SHell   (csh -fc 'if (5 < 6) echo ok')
 
 bash – Bourne Again Shell
 
-tcsh – enhanced C Shell
+tcsh – enhanced C Shell  (tcsh -c "source my.tcshr; useMyTcshCmd")
 
-zsh – Z SHell
+zsh – Z SHell  (zsh -c 'if [[ 5 -lt 6 ]] { echo ok };')
 
-ksh – Korn SHell
+ksh – Korn SHell  (ksh -c 'let i=3+4; print $i')
 
+
+Any shell:  sh -c "echo hello"
 
 
 Most commonly used network commands:
