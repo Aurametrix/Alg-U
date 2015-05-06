@@ -45,3 +45,7 @@ fi
 # and finally writes the result to an output file
 cat list-1 list-2 list-3 | sort | uniq > final.list
 
+# find out the start time of last sleep (e.g. closing the lid of your laptop)
+pmset -g log|grep -e " Sleep  " -e " Wake  "
+# pmset -g log | grep sleep | tail -n 1
+# grep powerd /private/var/log/system.log
