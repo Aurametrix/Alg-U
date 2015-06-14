@@ -12,8 +12,16 @@ zsh – Z SHell  (zsh -c 'if [[ 5 -lt 6 ]] { echo ok };')
 
 ksh – Korn SHell  (ksh -c 'let i=3+4; print $i')
 
-
 Any shell:  sh -c "echo hello"
+
+Comparison table
+
+| Feature  | Bourne sh  | ash, dash | pdksh, mksh	| bash
+| :------------ |:---------------:| -----:|
+| export PARAM=value      | NO | YES | YES | YES |
+| local param     | NO | YES | YES | YES |
+
+
 
 
 Most commonly used network commands:
