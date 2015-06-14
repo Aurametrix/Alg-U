@@ -16,10 +16,10 @@ Any shell:  sh -c "echo hello"
 
 Comparison table
 
-| Feature  | Bourne sh  | ash, dash | pdksh, mksh	| bash
-| :------------ |:---------------:| -----:|
-| export PARAM=value      | NO | YES | YES | YES |
-| local param     | NO | YES | YES | YES |
+| Feature                 | Bourne sh  | ash, dash | pdksh, mksh | bash      |
+| :-----------------------|:----------:| :--------:| :----------:| :--------:|
+| export PARAM=value      | NO         | YES       | YES         | YES       |
+| local param             | NO         | YES       | YES         | YES       |
 
 
 
