@@ -1,0 +1,6 @@
+&gt; /path/to/file.log
+# or use the following syntax
+: &gt; /path/to/file.log
+ 
+# finally delete it 
+rm /path/to/file.log
