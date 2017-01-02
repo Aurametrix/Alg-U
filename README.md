@@ -14,6 +14,20 @@ ksh – Korn SHell  (ksh -c 'let i=3+4; print $i')
 
 Any shell:  sh -c "echo hello"
 
+
+Bash on Ubuntu on Windows10
+
+Settings -> Update and Security -> Turn on Developer mode
+
+From Start, search for "Turn Windows features on or off" (type 'turn')
+
+Select Windows Subsystem for Linux (beta) & enable it via the GUI or the command-line: Turn on Developer Mode
+
+Open a PowerShell prompt as administrator and run:
+
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+
 Comparison table
 
 | Feature                 | Bourne sh  | ash, dash | pdksh, mksh | bash      |
