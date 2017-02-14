@@ -1,0 +1,35 @@
+# /etc/network/interfaces that already existed
+auto eth0  
+iface eth0 inet static  
+    address X.X.X.X/24
+    gateway X.X.X.1
+    dns-nameservers 8.8.8.8 8.8.4.4
+    dns-search your.dns.info
+    dns-options rotate
+    
+    # Add support for our new IP addresses
+iface eth0:1 inet static  
+    address Y.Y.Y.Y/24
+    dns-nameservers 8.8.8.8 8.8.4.4
+
+iface eth0:2 inet static  
+    address Z.Z.Z.Z/24
+    dns-nameservers 8.8.8.8 8.8.4.4
+    
+# retrieving certs    
+# First we need the Let's Encrypt bin
+sudo git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt 
+
+# registering domains
+# Get a cert for a domain (include all subdomains that apply to this file path, including www)
+/opt/letsencrypt/letsencrypt-auto certonly --webroot \
+  -d 'mysite.com,www.mysite.com' -w /var/www/mysite/public 
+
+# Get a cert for a domain and subdomain with different filesystem paths 
+/opt/letsencrypt/letsencrypt-auto certonly --webroot \
+  -d 'mysite.com,www.mysite.com' -w /var/www/mysite/public \
+  -d 'blog.mysite.com' -w /var/www/mysite_blog/ 
+
+# Get a cert for an entirely new domain name
+/opt/letsencrypt/letsencrypt-auto certonly --webroot \
+  -d 'newsite.com,www.newsite.com' -w /var/www/newsite/public 
