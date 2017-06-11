@@ -53,7 +53,12 @@ Most commonly used network commands:
 
 Piping, represented by the pipe character “|”, is used to combine two or more commands together.
 
-[Linux Enhanced BPF (eBPF) Tracing Tools](http://www.brendangregg.com/ebpf.html)
++ [Linux Enhanced BPF (eBPF) Tracing Tools](http://www.brendangregg.com/ebpf.html)
+
++ [to validte user passwords](https://github.com/berzerk0/Probable-Wordlists)
+
++ [binary kernel interface](https://github.com/torvalds/linux/blob/master/Documentation/process/stable-api-nonsense.rst)
++ [using pseudo-therminals](http://rachid.koucha.free.fr/tech_corner/pty_pdip.html)
 
 
 Bash2048.sh
