@@ -77,3 +77,8 @@ Supported escape sequences:
 | ~&   |  background ssh (when waiting for connections to terminate) |
 | ~?   |  this message                                               |
 | ~~   |  send the escape character by typing it twice               | 
+
+
+
+
+[Run Linux in your browser](https://bellard.org/jslinux/)
