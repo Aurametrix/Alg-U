@@ -66,3 +66,14 @@ Bash implementation of popular 2048 game.
 Controlled with arrow keys.
 
 Bugs: https://github.com/mydzor/bash2048/issues
+
+Supported escape sequences:
+
+| ~. | - terminate connection (and any multiplexed sessions) |   |   |   |
+|----|-------------------------------------------------------|---|---|---|
+| ~C | - open a command line                                 |   |   |   |
+| ~R | - Request rekey (SSH protocol 2 only)</pre>           |   |   |   |
+| ~# | - list forwarded connections</pre>                    |   |   |   |
+| ~&   |  background ssh (when waiting for connections to terminate) |
+| ~?   |  this message                                               |
+| ~~   |  send the escape character by typing it twice               | 
