@@ -60,6 +60,7 @@ Piping, represented by the pipe character “|”, is used to combine two or mor
 + [binary kernel interface](https://github.com/torvalds/linux/blob/master/Documentation/process/stable-api-nonsense.rst)
 + [using pseudo-therminals](http://rachid.koucha.free.fr/tech_corner/pty_pdip.html)
 
++ [Reliability of UNIX Utilities](http://ftp.cs.wisc.edu/paradyn/technical_papers/fuzz.pdf)
 
 Bash2048.sh
 Bash implementation of popular 2048 game.
