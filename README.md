@@ -50,8 +50,16 @@ Most commonly used network commands:
 
 – finger – information gathering command
 
+- Piping, represented by the pipe character “|”, is used to combine two or more commands together.
 
-Piping, represented by the pipe character “|”, is used to combine two or more commands together.
+#### Linux v4.15: Performance Goodies
+
+- epoll: scale nested calls
+- pvspinlock: hybrid fairness paravirt semantics
+- mm,x86: avoid saving/restoring interrupts state in gup
+- ipc: scale INFO commands
+- ext4:  improve smp scalability for inode generation
+
 
 + [Linux Enhanced BPF (eBPF) Tracing Tools](http://www.brendangregg.com/ebpf.html)
 
