@@ -91,3 +91,8 @@ Supported escape sequences:
 
 
 [Run Linux in your browser](https://bellard.org/jslinux/)
+
+
+#### Interesting projects
+
++ [SimulaVR](https://github.com/SimulaVR/Simula) - a 3D Linux window manager
