@@ -52,6 +52,19 @@ Most commonly used network commands:
 
 - Piping, represented by the pipe character “|”, is used to combine two or more commands together.
 
+### What do command names stand for
+
++ awk = "Aho Weinberger and Kernighan"  - named by its authors, Al Aho, Peter Weinberger and Brian Kernighan. 
++ grep = g/re/p  - "Global Regular Expression Print" - print all lines matching a certain pattern 
++ fgrep = "Fixed GREP". Searches for fixed strings only. 
++ egrep = "Extended GREP",  uses fancier regular expressions 
++ cat = "CATenate" 
++ gecos = "General Electric Comprehensive Operating Supervisor" 
++ nroff = "New ROFF" 
++ troff = "Typesetter new ROFF" 
++ bss = "Block Started by Symbol" 
+
+
 #### Linux v4.15: Performance Goodies
 
 - epoll: scale nested calls
