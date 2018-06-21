@@ -83,6 +83,8 @@ Most commonly used network commands:
 
 + [Reliability of UNIX Utilities](http://ftp.cs.wisc.edu/paradyn/technical_papers/fuzz.pdf)
 
++ [UNIX as an IDE](https://sanctum.geek.nz/arabesque/series/unix-as-ide/?)
+
 Bash2048.sh
 Bash implementation of popular 2048 game.
 Controlled with arrow keys.
