@@ -63,6 +63,7 @@ Most commonly used network commands:
 + nroff = "New ROFF" 
 + troff = "Typesetter new ROFF" 
 + bss = "Block Started by Symbol" 
++ curl https://example.com/setup.bash | (sleep 3; cat)   = Detecting a server detecting curl | bash
 
 
 #### Linux v4.15: Performance Goodies
