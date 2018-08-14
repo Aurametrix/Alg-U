@@ -86,6 +86,8 @@ Most commonly used network commands:
 
 + [UNIX as an IDE](https://sanctum.geek.nz/arabesque/series/unix-as-ide/?)
 
++ [NAvigate shell history](https://github.com/dvorka/hstr)
+
 Bash2048.sh
 Bash implementation of popular 2048 game.
 Controlled with arrow keys.
