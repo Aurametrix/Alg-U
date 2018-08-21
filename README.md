@@ -72,7 +72,7 @@ Most commonly used network commands:
 - pvspinlock: hybrid fairness paravirt semantics
 - mm,x86: avoid saving/restoring interrupts state in gup
 - ipc: scale INFO commands
-- ext4:  improve smp scalability for inode generation
+- [ext4](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=232530680290ba94ca37852ab10d9556ea28badf): improve smp scalability for inode generation
 
 
 + [Linux Enhanced BPF (eBPF) Tracing Tools](http://www.brendangregg.com/ebpf.html)
