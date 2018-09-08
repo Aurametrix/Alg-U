@@ -56,6 +56,7 @@ Most commonly used network commands:
 
 + awk = "Aho Weinberger and Kernighan"  - named by its authors, Al Aho, Peter Weinberger and Brian Kernighan. 
 + grep = g/re/p  - "Global Regular Expression Print" - print all lines matching a certain pattern 
++ [ripgrep](https://github.com/BurntSushi/ripgrep/releases/tag/0.10.0) - faster grep written in Rust
 + fgrep = "Fixed GREP". Searches for fixed strings only. 
 + egrep = "Extended GREP",  uses fancier regular expressions 
 + cat = "CATenate" 
