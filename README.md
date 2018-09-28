@@ -66,6 +66,18 @@ Most commonly used network commands:
 + bss = "Block Started by Symbol" 
 + curl https://example.com/setup.bash | (sleep 3; cat)   = Detecting a server detecting curl | bash
 
+#### Handy Aliases
++ alias untar='tar -zxvf '
++ alias wget='wget -c '
++ ssl rand -base64 20"  // generate a random, 20-character password
++ alias sha='shasum -a 256 '   // checksum on a downloaded file
++ alias ping='ping -c 5' // limit to 5 pings
++ alias www='python -m SimpleHTTPServer 8000' // Start a web server in any folder you'd like
++ alias speed='speedtest-cli --server 2406 --simple' // find how fast your network is
++ alias ipe='curl ipinfo.io/ip'  // find external IP address
++ alias ipi='ipconfig getifaddr en0'  // find local IP adddress
++ alias c='clear'  // clear the screen
+
 
 #### Linux v4.15: Performance Goodies
 
