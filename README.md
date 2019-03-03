@@ -121,7 +121,11 @@ Supported escape sequences:
 
 
 
-[Run Linux in your browser](https://bellard.org/jslinux/)
++[Run Linux in your browser](https://bellard.org/jslinux/)
+
+Upload files from command line:
+
+    curl https://bashupload.com/name.txt --data-binary @file.txt
 
 
 #### Interesting projects
