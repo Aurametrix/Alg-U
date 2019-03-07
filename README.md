@@ -128,6 +128,9 @@ Upload files from command line:
     curl https://bashupload.com/name.txt --data-binary @file.txt
 
 
++ [Linux man pages](https://www.kernel.org/doc/man-pages/download.html)
+
+
 #### Interesting projects
 
 + [SimulaVR](https://github.com/SimulaVR/Simula) - a 3D Linux window manager
