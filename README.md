@@ -134,3 +134,4 @@ Upload files from command line:
 #### Interesting projects
 
 + [SimulaVR](https://github.com/SimulaVR/Simula) - a 3D Linux window manager
++ [Gnome shell]()
