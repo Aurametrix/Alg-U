@@ -12,6 +12,8 @@ zsh – Z SHell  (zsh -c 'if [[ 5 -lt 6 ]] { echo ok };')
 
 ksh – Korn SHell  (ksh -c 'let i=3+4; print $i')
 
+es - mixed = {ls} hello, {wc} world
+
 Any shell:  sh -c "echo hello"
 
 
