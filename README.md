@@ -79,7 +79,11 @@ Most commonly used network commands:
 + alias ipe='curl ipinfo.io/ip'  // find external IP address
 + alias ipi='ipconfig getifaddr en0'  // find local IP adddress
 + alias c='clear'  // clear the screen
-
++ lsd - lsd -la /etc/*
++ alias l='ls -l'
++ alias la='ls -a'
++ alias lla='ls -la'
++ alias lt='ls --tree'
 
 #### Linux v4.15: Performance Goodies
 
