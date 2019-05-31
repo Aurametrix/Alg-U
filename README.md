@@ -85,6 +85,13 @@ Most commonly used network commands:
 + alias lla='ls -la'
 + alias lt='ls --tree'
 
+
+#### Better Bash history
+
+    shopt -s histappend
+    HISTFILESIZE=1000000
+    HISTSIZE=1000000
+    
 #### Linux v4.15: Performance Goodies
 
 - epoll: scale nested calls
