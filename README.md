@@ -16,6 +16,13 @@ es - mixed = {ls} hello, {wc} world
 
 Any shell:  sh -c "echo hello"
 
+eshell
+    (defun eshell/do-work (&rest args)
+      "Do some work in an optional directory."
+      (let ((some-dir (if args
+                       (pop args)
+                    default-directory)))
+        (message "Work in %s" some-dir)))
 
 Bash on Ubuntu on Windows10
 
