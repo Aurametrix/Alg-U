@@ -98,7 +98,23 @@ Most commonly used network commands:
     shopt -s histappend
     HISTFILESIZE=1000000
     HISTSIZE=1000000
-    
+
+Create ~/.inputrc and fill it with this to search through your history using the up and down arrows 
+
+    "\e[A": history-search-backward
+    "\e[B": history-search-forward
+
+set show-all-if-ambiguous on
+set completion-ignore-case on
+
+    #include <stdio.h>
+    #include <readline/readline.h>
+    #include <readline/history.h>
+
+char *
+readline (const char *prompt);
+
+
 #### Linux v4.15: Performance Goodies
 
 - epoll: scale nested calls
