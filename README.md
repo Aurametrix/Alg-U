@@ -75,6 +75,11 @@ Most commonly used network commands:
 + bss = "Block Started by Symbol" 
 + curl https://example.com/setup.bash | (sleep 3; cat)   = Detecting a server detecting curl | bash
 
++ nmon  - short hand for Nigel's Monitor -  a computer performance system monitor tool for the AIX and Linux operating systems.
+
++ [htop](https://peteris.rocks/blog/htop/)
+
+
 #### Handy Aliases
 + alias untar='tar -zxvf '
 + alias wget='wget -c '
