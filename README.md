@@ -179,6 +179,7 @@ Upload files from command line:
 + [Gnome shell]()
 + [Universal binaries for Linix](https://icculus.org/fatelf/)
 + [Linux from scratch](http://www.linuxfromscratch.org/)
++ [Linux on smrtphone](https://tuxphones.com/2020-everything-running-linux-smartphone-guide/)
 
 
 #### Conferences
