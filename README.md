@@ -140,7 +140,9 @@ readline (const char *prompt);
 
 + [UNIX as an IDE](https://sanctum.geek.nz/arabesque/series/unix-as-ide/?)
 
-+ [NAvigate shell history](https://github.com/dvorka/hstr)
++ [Navigate shell history](https://github.com/dvorka/hstr)
+
++ [Writing safe shell scripts](https://sipb.mit.edu/doc/safe-shell/)
 
 Bash2048.sh
 Bash implementation of popular 2048 game.
