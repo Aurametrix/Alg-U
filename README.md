@@ -171,6 +171,8 @@ Upload files from command line:
     curl https://bashupload.com/name.txt --data-binary @file.txt
 
 
++ [Awk as a major systems programming language](http://www.skeeve.com/awk-sys-prog.html)
+
 + [Linux man pages](https://www.kernel.org/doc/man-pages/download.html)
 
 
@@ -186,4 +188,4 @@ Upload files from command line:
 
 #### Conferences
 
-+ [The 2019 Linux Storage, Filesystem, and Memory-Management Summit](https://lwn.net/Articles/lsfmm2019/)
++ [The 2020 Linux Storage, Filesystem, and Memory-Management Summit](https://events.linuxfoundation.org/lsfmm/)
