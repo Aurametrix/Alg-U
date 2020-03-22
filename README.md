@@ -119,45 +119,57 @@ set completion-ignore-case on
 char *
 readline (const char *prompt);
 
+
+* [Unix Pipes](https://www.vegardstikbakke.com/how-do-pipes-work-sigpipe/)
+
 Running kernel and system information
-# uname -a                           # Get the kernel version (and BSD version)
-# lsb_release -a                     # Full release info of any LSB distribution
-# cat /etc/SuSE-release              # Get SuSE version
-# cat /etc/debian_version            # Get Debian version
-Use /etc/DISTR-release with DISTR= lsb (Ubuntu), redhat, gentoo, mandrake, sun (Solaris), and so on. See also /etc/issue.
-# uptime                             # Show how long the system has been running + load
-# hostname                           # system's host name
-# hostname -i                        # Display the IP address of the host. (Linux only)
-# man hier                           # Description of the file system hierarchy
-# last reboot                        # Show system reboot history
+uname -a                           # Get the kernel version (and BSD version)
+
+    lsb_release -a                     # Full release info of any LSB distribution
+
+    cat /etc/SuSE-release              # Get SuSE version
+
+    cat /etc/debian_version            # Get Debian version
+
+    Use /etc/DISTR-release with DISTR= lsb (Ubuntu), redhat, gentoo, mandrake, sun (Solaris), and so on. See also /etc/issue.
+
+    uptime                             # Show how long the system has been running + load
+
+    hostname                           # system's host name
+
+    hostname -i                        # Display the IP address of the host. (Linux only)
+
+    man hier                           # Description of the file system hierarchy
+
+#### last reboot                        # Show system reboot history
 Hardware Informations
 Kernel detected hardware
-# dmesg                              # Detected hardware and boot messages
-# lsdev                              # information about installed hardware
-# dd if=/dev/mem bs=1k skip=768 count=256 2>/dev/null | strings -n 8 # Read BIOS
+#### dmesg                              # Detected hardware and boot messages
+#### lsdev                              # information about installed hardware
+#### dd if=/dev/mem bs=1k skip=768 count=256 2>/dev/null | strings -n 8 # Read BIOS
 Linux
-# cat /proc/cpuinfo                  # CPU model
-# cat /proc/meminfo                  # Hardware memory
-# grep MemTotal /proc/meminfo        # Display the physical memory
-# watch -n1 'cat /proc/interrupts'   # Watch changeable interrupts continuously
-# free -m                            # Used and free memory (-m for MB)
-# cat /proc/devices                  # Configured devices
-# lspci -tv                          # Show PCI devices
-# lsusb -tv                          # Show USB devices
-# lshal                              # Show a list of all devices with their properties
-# dmidecode                          # Show DMI/SMBIOS: hw info from the BIOS
+#### cat /proc/cpuinfo                  # CPU model
+#### cat /proc/meminfo                  # Hardware memory
+#### grep MemTotal /proc/meminfo        # Display the physical memory
+#### watch -n1 'cat /proc/interrupts'   # Watch changeable interrupts continuously
+#### free -m                            # Used and free memory (-m for MB)
+#### cat /proc/devices                  # Configured devices
+#### lspci -tv                          # Show PCI devices
+#### lsusb -tv                          # Show USB devices
+#### lshal                              # Show a list of all devices with their properties
+#### dmidecode                          # Show DMI/SMBIOS: hw info from the BIOS
 FreeBSD
-# sysctl hw.model                    # CPU model
-# sysctl hw                          # Gives a lot of hardware information
-# sysctl hw.ncpu                     # number of active CPUs installed
-# sysctl vm                          # Memory usage
-# sysctl hw.realmem                  # Hardware memory
-# sysctl -a | grep mem               # Kernel memory settings and info
-# sysctl dev                         # Configured devices
-# pciconf -l -cv                     # Show PCI devices
-# usbdevs -v                         # Show USB devices
-# atacontrol list                    # Show ATA devices
-# camcontrol devlist -v              # Show SCSI devices
+#### sysctl hw.model                    # CPU model
+#### sysctl hw                          # Gives a lot of hardware information
+#### sysctl hw.ncpu                     # number of active CPUs installed
+#### sysctl vm                          # Memory usage
+#### sysctl hw.realmem                  # Hardware memory
+#### sysctl -a | grep mem               # Kernel memory settings and info
+#### sysctl dev                         # Configured devices
+#### pciconf -l -cv                     # Show PCI devices
+#### usbdevs -v                         # Show USB devices
+#### atacontrol list                    # Show ATA devices
+#### camcontrol devlist -v              # Show SCSI devices
 Load, statistics and messages
 The following commands are useful to find out what is going on on the system.
 # top                                # display and update the top cpu processes
