@@ -61,6 +61,9 @@ Most commonly used network commands:
 
 - Piping, represented by the pipe character “|”, is used to combine two or more commands together.
 
+* [how are pipes implemented](https://toroid.org/unix-pipe-implementation)
+
+
 ### What do command names stand for
 
 + awk = "Aho Weinberger and Kernighan"  - named by its authors, Al Aho, Peter Weinberger and Brian Kernighan. 
