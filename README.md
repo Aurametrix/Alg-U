@@ -82,6 +82,7 @@ Most commonly used network commands:
 
 + [htop](https://peteris.rocks/blog/htop/)
 
++ [Shell productivity tips and tricks](https://blog.balthazar-rouberol.com/shell-productivity-tips-and-tricks.html)
 
 #### Handy Aliases
 + alias untar='tar -zxvf '
