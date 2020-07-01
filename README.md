@@ -145,28 +145,39 @@ uname -a                           # Get the kernel version (and BSD version)
 
     man hier                           # Description of the file system hierarchy
 
-#### last reboot                        # Show system reboot history
+    #### last reboot                        # Show system reboot history
 Hardware Informations
 Kernel detected hardware
-#### dmesg                              # Detected hardware and boot messages
-#### lsdev                              # information about installed hardware
-#### dd if=/dev/mem bs=1k skip=768 count=256 2>/dev/null | strings -n 8 # Read BIOS
+    #### dmesg                              # Detected hardware and boot messages
+    #### lsdev                              # information about installed hardware
+    #### dd if=/dev/mem bs=1k skip=768 count=256 2>/dev/null | strings -n 8 # Read BIOS
+
+
+     iconv -f utf-8 -t utf-8 -c file.txt     # Remove non utf characters - useful for Python
+ 
+ for Python: 
+     read_csv('file', encoding = "ISO-8859-1")
+
+
 Linux
-#### cat /proc/cpuinfo                  # CPU model
-#### cat /proc/meminfo                  # Hardware memory
-#### grep MemTotal /proc/meminfo        # Display the physical memory
-#### watch -n1 'cat /proc/interrupts'   # Watch changeable interrupts continuously
-#### free -m                            # Used and free memory (-m for MB)
-#### cat /proc/devices                  # Configured devices
-#### lspci -tv                          # Show PCI devices
-#### lsusb -tv                          # Show USB devices
-#### lshal                              # Show a list of all devices with their properties
-#### dmidecode                          # Show DMI/SMBIOS: hw info from the BIOS
+
+    #### cat /proc/cpuinfo                  # CPU model
+    #### cat /proc/meminfo                  # Hardware memory
+    #### grep MemTotal /proc/meminfo        # Display the physical memory
+    #### watch -n1 'cat /proc/interrupts'   # Watch changeable interrupts continuously
+    #### free -m                            # Used and free memory (-m for MB)
+    #### cat /proc/devices                  # Configured devices
+    #### lspci -tv                          # Show PCI devices
+    #### lsusb -tv                          # Show USB devices
+    #### lshal                              # Show a list of all devices with their properties
+    #### dmidecode                          # Show DMI/SMBIOS: hw info from the BIOS
+
 FreeBSD
-#### sysctl hw.model                    # CPU model
-#### sysctl hw                          # Gives a lot of hardware information
-#### sysctl hw.ncpu                     # number of active CPUs installed
-#### sysctl vm                          # Memory usage
+
+    #### sysctl hw.model                    # CPU model
+    #### sysctl hw                          # Gives a lot of hardware information
+    #### sysctl hw.ncpu                     # number of active CPUs installed
+    #### sysctl vm                          # Memory usage
 #### sysctl hw.realmem                  # Hardware memory
 #### sysctl -a | grep mem               # Kernel memory settings and info
 #### sysctl dev                         # Configured devices
