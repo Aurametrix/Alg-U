@@ -146,6 +146,7 @@ uname -a                           # Get the kernel version (and BSD version)
     man hier                           # Description of the file system hierarchy
 
     #### last reboot                        # Show system reboot history
+    
 Hardware Informations
 Kernel detected hardware
     #### dmesg                              # Detected hardware and boot messages
@@ -178,24 +179,29 @@ FreeBSD
     #### sysctl hw                          # Gives a lot of hardware information
     #### sysctl hw.ncpu                     # number of active CPUs installed
     #### sysctl vm                          # Memory usage
-#### sysctl hw.realmem                  # Hardware memory
-#### sysctl -a | grep mem               # Kernel memory settings and info
-#### sysctl dev                         # Configured devices
-#### pciconf -l -cv                     # Show PCI devices
-#### usbdevs -v                         # Show USB devices
-#### atacontrol list                    # Show ATA devices
-#### camcontrol devlist -v              # Show SCSI devices
-Load, statistics and messages
+    #### sysctl hw.realmem                  # Hardware memory
+    #### sysctl -a | grep mem               # Kernel memory settings and info
+    #### sysctl dev                         # Configured devices
+    #### pciconf -l -cv                     # Show PCI devices
+    #### usbdevs -v                         # Show USB devices
+    #### atacontrol list                    # Show ATA devices
+    #### camcontrol devlist -v              # Show SCSI devices
+
+#### Load, statistics and messages
+
 The following commands are useful to find out what is going on on the system.
-# top                                # display and update the top cpu processes
-# mpstat 1                           # display processors related statistics
-# vmstat 2                           # display virtual memory statistics
-# iostat 2                           # display I/O statistics (2 s intervals)
-# systat -vmstat 1                   # BSD summary of system statistics (1 s intervals)
-# systat -tcp 1                      # BSD tcp connections (try also -ip)
-# systat -netstat 1                  # BSD active network connections
-# systat -ifstat 1                   # BSD network traffic through active interfaces
-# systat -iostat 1                   # BSD CPU and and disk throughput
+
+    #### top                                # display and update the top cpu processes
+    #### mpstat 1                           # display processors related statistics
+    #### vmstat 2                           # display virtual memory statistics
+    #### iostat 2                           # display I/O statistics (2 s intervals)
+    #### systat -vmstat 1                   # BSD summary of system statistics (1 s intervals)
+    #### systat -tcp 1                      # BSD tcp connections (try also -ip)
+    #### systat -netstat 1                  # BSD active network connections
+    #### systat -ifstat 1                   # BSD network traffic through active interfaces
+
+    #### systat -iostat 1                   # BSD CPU and and disk throughput
+
 # ipcs -a                            # information on System V interprocess
 # tail -n 500 /var/log/messages      # Last 500 kernel/syslog messages
 # tail /var/log/warn                 # System warnings messages see syslog.conf
@@ -2587,6 +2593,7 @@ Upload files from command line:
 + [Linux from scratch](http://www.linuxfromscratch.org/)
 + [Linux on smrtphone](https://tuxphones.com/2020-everything-running-linux-smartphone-guide/)
 + [Colorize CLI](https://danyspin97.org/blog/colorize-your-cli/)
++ [Rebol](http://www.rebol.com/docs/shell.html)
 
 
 #### Conferences
