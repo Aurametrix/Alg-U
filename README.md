@@ -202,50 +202,51 @@ The following commands are useful to find out what is going on on the system.
 
     #### systat -iostat 1                   # BSD CPU and and disk throughput
 
-# ipcs -a                            # information on System V interprocess
-# tail -n 500 /var/log/messages      # Last 500 kernel/syslog messages
-# tail /var/log/warn                 # System warnings messages see syslog.conf
+    # ipcs -a                            # information on System V interprocess
+    # tail -n 500 /var/log/messages      # Last 500 kernel/syslog messages
+    # tail /var/log/warn                 # System warnings messages see syslog.conf
+
 Users
-# id                                 # Show the active user id with login and group
-# last                               # Show last logins on the system
-# who                                # Show who is logged on the system
-# groupadd admin                     # Add group "admin" and user colin (Linux/Solaris)
-# useradd -c "Colin Barschel" -g admin -m colin
-# usermod -a -G <group> <user>       # Add existing user to group (Debian)
-# groupmod -A <user> <group>         # Add existing user to group (SuSE)
-# userdel colin                      # Delete user colin (Linux/Solaris)
-# adduser joe                        # FreeBSD add user joe (interactive)
-# rmuser joe                         # FreeBSD delete user joe (interactive)
-# pw groupadd admin                  # Use pw on FreeBSD
-# pw groupmod admin -m newmember     # Add a new member to a group
-# pw useradd colin -c "Colin Barschel" -g admin -m -s /bin/tcsh 
-# pw userdel colin; pw groupdel admin
+    # id                                 # Show the active user id with login and group
+    # last                               # Show last logins on the system
+    # who                                # Show who is logged on the system
+    # groupadd admin                     # Add group "admin" and user colin (Linux/Solaris)
+    # useradd -c "Colin Barschel" -g admin -m colin
+    # usermod -a -G <group> <user>       # Add existing user to group (Debian)
+    # groupmod -A <user> <group>         # Add existing user to group (SuSE)
+    # userdel colin                      # Delete user colin (Linux/Solaris)
+    # adduser joe                        # FreeBSD add user joe (interactive)
+    # rmuser joe                         # FreeBSD delete user joe (interactive)
+    # pw groupadd admin                  # Use pw on FreeBSD
+    # pw groupmod admin -m newmember     # Add a new member to a group
+    # pw useradd colin -c "Colin Barschel" -g admin -m -s /bin/tcsh 
+    # pw userdel colin; pw groupdel admin
 Encrypted passwords are stored in /etc/shadow for Linux and Solaris and /etc/master.passwd on FreeBSD. If the master.passwd is modified manually (say to delete a password), run # pwd_mkdb -p master.passwd to rebuild the database.
 
 To temporarily prevent logins system wide (for all users but root) use nologin. The message in nologin will be displayed (might not work with ssh pre-shared keys).
-# echo "Sorry no login now" > /etc/nologin       # (Linux)
-# echo "Sorry no login now" > /var/run/nologin   # (FreeBSD)
+    # echo "Sorry no login now" > /etc/nologin       # (Linux)
+    # echo "Sorry no login now" > /var/run/nologin   # (FreeBSD)
 Limits
 Some application require higher limits on open files and sockets (like a proxy web server, database). The default limits are usually too low.
 Linux
 Per shell/script
 The shell limits are governed by ulimit. The status is checked with ulimit -a. For example to change the open files limit from 1024 to 10240 do:
-# ulimit -n 10240                    # This is only valid within the shell
+    # ulimit -n 10240                    # This is only valid within the shell
 The ulimit command can be used in a script to change the limits for the script only.
 Per user/process
 Login users and applications can be configured in /etc/security/limits.conf. For example:
-# cat /etc/security/limits.conf
+    # cat /etc/security/limits.conf
 *   hard    nproc   250              # Limit user processes
 asterisk hard nofile 409600          # Limit application open files
 System wide
 Kernel limits are set with sysctl. Permanent limits are set in /etc/sysctl.conf.
-# sysctl -a                          # View all system limits
-# sysctl fs.file-max                 # View max open files limit
-# sysctl fs.file-max=102400          # Change max open files limit
-# echo "1024 50000" > /proc/sys/net/ipv4/ip_local_port_range  # port range
-# cat /etc/sysctl.conf
-fs.file-max=102400                   # Permanent entry in sysctl.conf
-# cat /proc/sys/fs/file-nr           # How many file descriptors are in use
+    # sysctl -a                          # View all system limits
+    # sysctl fs.file-max                 # View max open files limit
+    # sysctl fs.file-max=102400          # Change max open files limit
+    # echo "1024 50000" > /proc/sys/net/ipv4/ip_local_port_range  # port range
+    # cat /etc/sysctl.conf
+      fs.file-max=102400                   # Permanent entry in sysctl.conf
+    # cat /proc/sys/fs/file-nr           # How many file descriptors are in use
 FreeBSD
 Per shell/script
 Use the command limits in csh or tcsh or as in Linux, use ulimit in an sh or bash shell.
@@ -253,16 +254,16 @@ Per user/process
 The default limits on login are set in /etc/login.conf. An unlimited value is still limited by the system maximal value.
 System wide
 Kernel limits are also set with sysctl. Permanent limits are set in /etc/sysctl.conf or /boot/loader.conf. The syntax is the same as Linux but the keys are different.
-# sysctl -a                          # View all system limits
-# sysctl kern.maxfiles=XXXX          # maximum number of file descriptors
+    # sysctl -a                          # View all system limits
+    # sysctl kern.maxfiles=XXXX          # maximum number of file descriptors
 kern.ipc.nmbclusters=32768           # Permanent entry in /etc/sysctl.conf
 kern.maxfiles=65536                  # Typical values for Squid
 kern.maxfilesperproc=32768
 kern.ipc.somaxconn=8192              # TCP queue. Better for apache/sendmail
-# sysctl kern.openfiles              # How many file descriptors are in use
-# sysctl kern.ipc.numopensockets     # How many open sockets are in use
-# sysctl net.inet.ip.portrange.last=50000 # Default is 1024-5000
-# netstat -m                         # network memory buffers statistics
+    # sysctl kern.openfiles              # How many file descriptors are in use
+    # sysctl kern.ipc.numopensockets     # How many open sockets are in use
+    # sysctl net.inet.ip.portrange.last=50000 # Default is 1024-5000
+    # netstat -m                         # network memory buffers statistics
 See The FreeBSD handbook Chapter 11 for details. And also FreeBSD performance tuning
 Solaris
 The following values in /etc/system will increase the maximum file descriptors per proc:
@@ -272,34 +273,34 @@ Runlevels
 Linux
 Once booted, the kernel starts init which then starts rc which starts all scripts belonging to a runlevel. The scripts are stored in /etc/init.d and are linked into /etc/rc.d/rcN.d with N the runlevel number.
 The default runlevel is configured in /etc/inittab. It is usually 3 or 5:
-# grep default: /etc/inittab                                         
+    # grep default: /etc/inittab                                         
 id:3:initdefault:
 The actual runlevel can be changed with init. For example to go from 3 to 5:
-# init 5                             # Enters runlevel 5
-0       Shutdown and halt
-1       Single-User mode (also S)
-2       Multi-user without network
-3       Multi-user with network
-5       Multi-user with X
-6       Reboot
+    # init 5                             # Enters runlevel 5
+    0       Shutdown and halt
+    1       Single-User mode (also S)
+    2       Multi-user without network
+    3       Multi-user with network
+    5       Multi-user with X
+    6       Reboot
 Use chkconfig to configure the programs that will be started at boot in a runlevel.
-# chkconfig --list                   # List all init scripts
-# chkconfig --list sshd              # Report the status of sshd
-# chkconfig sshd --level 35 on       # Configure sshd for levels 3 and 5
-# chkconfig sshd off                 # Disable sshd for all runlevels
+    # chkconfig --list                   # List all init scripts
+    # chkconfig --list sshd              # Report the status of sshd
+    # chkconfig sshd --level 35 on       # Configure sshd for levels 3 and 5
+    # chkconfig sshd off                 # Disable sshd for all runlevels
 Debian and Debian based distributions like Ubuntu or Knoppix use the command update-rc.d to manage the runlevels scripts. Default is to start in 2,3,4 and 5 and shutdown in 0,1 and 6.
-# update-rc.d sshd defaults          # Activate sshd with the default runlevels
-# update-rc.d sshd start 20 2 3 4 5 . stop 20 0 1 6 .  # With explicit arguments
-# update-rc.d -f sshd remove         # Disable sshd for all runlevels
-# shutdown -h now (or # poweroff)    # Shutdown and halt the system
+    # update-rc.d sshd defaults          # Activate sshd with the default runlevels
+    # update-rc.d sshd start 20 2 3 4 5 . stop 20 0 1 6 .  # With explicit arguments
+    # update-rc.d -f sshd remove         # Disable sshd for all runlevels
+    # shutdown -h now (or # poweroff)    # Shutdown and halt the system
 FreeBSD
 The BSD boot approach is different from the SysV, there are no runlevels. The final boot state (single user, with or without X) is configured in /etc/ttys. All OS scripts are located in /etc/rc.d/ and in /usr/local/etc/rc.d/ for third-party applications. The activation of the service is configured in /etc/rc.conf and /etc/rc.conf.local. The default behavior is configured in /etc/defaults/rc.conf. The scripts responds at least to start|stop|status.
-# /etc/rc.d/sshd status
+    # /etc/rc.d/sshd status
 sshd is running as pid 552.
-# shutdown now                       # Go into single-user mode
-# exit                               # Go back to multi-user mode
-# shutdown -p now                    # Shutdown and halt the system
-# shutdown -r now                    # Reboot
+    # shutdown now                       # Go into single-user mode
+    # exit                               # Go back to multi-user mode
+    # shutdown -p now                    # Shutdown and halt the system
+    # shutdown -r now                    # Reboot
 The process init can also be used to reach one of the following states level. For example # init 6 for reboot.
 0       Halt and turn the power off (signal USR2)
 1       Go to single-user mode (signal TERM)
@@ -318,45 +319,45 @@ At the boot loader (lilo or grub), enter the following boot option:
 init=/bin/sh
 The kernel will mount the root partition and init will start the bourne shell instead of rc and then a runlevel. Use the command passwd at the prompt to change the password and then reboot. Forget the single user mode as you need the password for that.
 If, after booting, the root partition is mounted read only, remount it rw:
-# mount -o remount,rw /
-# passwd                             # or delete the root password (/etc/shadow)
-# sync; mount -o remount,ro /        # sync before to remount read only
-# reboot
+    # mount -o remount,rw /
+    # passwd                             # or delete the root password (/etc/shadow)
+    # sync; mount -o remount,ro /        # sync before to remount read only
+    # reboot
 FreeBSD method 1
 On FreeBSD, boot in single user mode, remount / rw and use passwd. You can select the single user mode on the boot menu (option 4) which is displayed for 10 seconds at startup. The single user mode will give you a root shell on the / partition.
-# mount -u /; mount -a               # will mount / rw
-# passwd
-# reboot
+    # mount -u /; mount -a               # will mount / rw
+    # passwd
+    # reboot
 Unixes and FreeBSD and Linux method 2
 Other Unixes might not let you go away with the simple init trick. The solution is to mount the root partition from an other OS (like a rescue CD) and change the password on the disk.
 Boot a live CD or installation CD into a rescue mode which will give you a shell.
 Find the root partition with fdisk e.g. fdisk /dev/sda
 Mount it and use chroot:
-# mount -o rw /dev/ad4s3a /mnt
-# chroot /mnt                        # chroot into /mnt
-# passwd
-# reboot
+    # mount -o rw /dev/ad4s3a /mnt
+    # chroot /mnt                        # chroot into /mnt
+    # passwd
+    # reboot
 Kernel modules
 Linux
-# lsmod                              # List all modules loaded in the kernel
-# modprobe isdn                      # To load a module (here isdn)
+    # lsmod                              # List all modules loaded in the kernel
+     modprobe isdn                      # To load a module (here isdn)
 FreeBSD
-# kldstat                            # List all modules loaded in the kernel
-# kldload crypto                     # To load a module (here crypto)
+    # kldstat                            # List all modules loaded in the kernel
+    # kldload crypto                     # To load a module (here crypto)
 Compile Kernel
 Linux
-# cd /usr/src/linux
-# make mrproper                      # Clean everything, including config files
-# make oldconfig                     # Reuse the old .config if existent
-# make menuconfig                    # or xconfig (Qt) or gconfig (GTK)
-# make                               # Create a compressed kernel image
-# make modules                       # Compile the modules
-# make modules_install               # Install the modules
-# make install                       # Install the kernel
-# reboot
+    # cd /usr/src/linux
+    # make mrproper                      # Clean everything, including config files
+    # make oldconfig                     # Reuse the old .config if existent
+    # make menuconfig                    # or xconfig (Qt) or gconfig (GTK)
+    # make                               # Create a compressed kernel image
+    # make modules                       # Compile the modules
+    # make modules_install               # Install the modules
+    # make install                       # Install the kernel
+    # reboot
 FreeBSD
 Optionally update the source tree (in /usr/src) with csup (as of FreeBSD 6.2 or later):
-# csup <supfile>
+    # csup <supfile>
 I use the following supfile:
 *default host=cvsup5.FreeBSD.org  # www.freebsd.org/handbook/cvsup.html#CVSUP-MIRRORS
 *default prefix=/usr 
@@ -364,87 +365,87 @@ I use the following supfile:
 *default release=cvs delete tag=RELENG_7
 src-all
 To modify and rebuild the kernel, copy the generic configuration file to a new name and edit it as needed (you can also edit the file GENERIC directly). To restart the build after an interruption, add the option NO_CLEAN=YES to the make command to avoid cleaning the objects already build.
-# cd /usr/src/sys/i386/conf/
-# cp GENERIC MYKERNEL
-# cd /usr/src
-# make buildkernel KERNCONF=MYKERNEL
-# make installkernel KERNCONF=MYKERNEL
+    # cd /usr/src/sys/i386/conf/
+    # cp GENERIC MYKERNEL
+    # cd /usr/src
+    # make buildkernel KERNCONF=MYKERNEL
+    # make installkernel KERNCONF=MYKERNEL
 To rebuild the full OS:
-# make buildworld                    # Build the full OS but not the kernel
-# make buildkernel                   # Use KERNCONF as above if appropriate
-# make installkernel
-# reboot
-# mergemaster -p                     # Compares only files known to be essential
-# make installworld
-# mergemaster -i -U                  # Update all configurations and other files
-# reboot
+    # make buildworld                    # Build the full OS but not the kernel
+    # make buildkernel                   # Use KERNCONF as above if appropriate
+    # make installkernel
+    # reboot
+    # mergemaster -p                     # Compares only files known to be essential
+    # make installworld
+    # mergemaster -i -U                  # Update all configurations and other files
+    # reboot
 For small changes in the source you can use NO_CLEAN=yes to avoid rebuilding the whole tree.
-# make buildworld NO_CLEAN=yes       # Don't delete the old objects
-# make buildkernel KERNCONF=MYKERNEL NO_CLEAN=yes
+    # make buildworld NO_CLEAN=yes       # Don't delete the old objects
+    # make buildkernel KERNCONF=MYKERNEL NO_CLEAN=yes
 Repair grub
 So you broke grub? Boot from a live cd, [find your linux partition under /dev and use fdisk to find the linux partion] mount the linux partition, add /proc and /dev and use grub-install /dev/xyz. Suppose linux lies on /dev/sda6:
-# mount /dev/sda6 /mnt               # mount the linux partition on /mnt
-# mount --bind /proc /mnt/proc       # mount the proc subsystem into /mnt
-# mount --bind /dev /mnt/dev         # mount the devices into /mnt
-# chroot /mnt                        # change root to the linux partition
-# grub-install /dev/sda              # reinstall grub with your old settings
+    # mount /dev/sda6 /mnt               # mount the linux partition on /mnt
+    # mount --bind /proc /mnt/proc       # mount the proc subsystem into /mnt
+    # mount --bind /dev /mnt/dev         # mount the devices into /mnt
+    # chroot /mnt                        # change root to the linux partition
+    # grub-install /dev/sda              # reinstall grub with your old settings
 Misc
 Disable OSX virtual memory (repeat with load to re-enable). Faster system, but a little risky.
-# sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dynamic_pager.plist
-# sleep 3600; pmset sleepnow           # go to standby in one hour (OSX)
-# defaults write -g com.apple.mouse.scaling -float 8
+    # sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dynamic_pager.plist
+    # sleep 3600; pmset sleepnow           # go to standby in one hour (OSX)
+    # defaults write -g com.apple.mouse.scaling -float 8
                                      # OSX mouse acceleration (use -1 to reverse)
 PROCESSES
 Listing | Priority | Background/Foreground | Top | Kill
 
 Listing and PIDs
 Each process has a unique number, the PID. A list of all running process is retrieved with ps.
-# ps -auxefw                         # Extensive list of all running process
+    # ps -auxefw                         # Extensive list of all running process
 However more typical usage is with a pipe or with pgrep (for OS X install proctools from MacPorts):
-# ps axww | grep cron
+    # ps axww | grep cron
   586  ??  Is     0:01.48 /usr/sbin/cron -s
-# ps axjf                            # All processes in a tree format (Linux)
-# ps aux | grep 'ss[h]'              # Find all ssh pids without the grep pid
-# pgrep -l sshd                      # Find the PIDs of processes by (part of) name
-# echo $$                            # The PID of your shell
-# fuser -va 22/tcp                   # List processes using port 22 (Linux)
-# pmap PID                           # Memory map of process (hunt memory leaks) (Linux)
-# fuser -va /home                    # List processes accessing the /home partition
-# strace df                          # Trace system calls and signals
-# truss df                           # same as above on FreeBSD/Solaris/Unixware
+    # ps axjf                            # All processes in a tree format (Linux)
+    # ps aux | grep 'ss[h]'              # Find all ssh pids without the grep pid
+    # pgrep -l sshd                      # Find the PIDs of processes by (part of) name
+    # echo $$                            # The PID of your shell
+    # fuser -va 22/tcp                   # List processes using port 22 (Linux)
+    # pmap PID                           # Memory map of process (hunt memory leaks) (Linux)
+     fuser -va /home                    # List processes accessing the /home partition
+    # strace df                          # Trace system calls and signals
+    # truss df                           # same as above on FreeBSD/Solaris/Unixware
 Priority
 Change the priority of a running process with renice. Negative numbers have a higher priority, the lowest is -20 and "nice" have a positive value.
-# renice -5 586                      # Stronger priority
+    # renice -5 586                      # Stronger priority
 586: old priority 0, new priority -5
 Start the process with a defined priority with nice. Positive is "nice" or weak, negative is strong scheduling priority. Make sure you know if /usr/bin/nice or the shell built-in is used (check with # which nice).
-# nice -n -5 top                     # Stronger priority (/usr/bin/nice)
-# nice -n 5 top                      # Weaker priority (/usr/bin/nice)
-# nice +5 top                        # tcsh builtin nice (same as above!)
+    # nice -n -5 top                     # Stronger priority (/usr/bin/nice)
+    # nice -n 5 top                      # Weaker priority (/usr/bin/nice)
+    # nice +5 top                        # tcsh builtin nice (same as above!)
 While nice changes the CPU scheduler, an other useful command ionice will schedule the disk IO. This is very useful for intensive IO application (e.g. compiling). You can select a class (idle - best effort - real time), the man page is short and well explained.
-# ionice c3 -p123                    # set idle class for pid 123 (Linux only)
-# ionice -c2 -n0 firefox             # Run firefox with best effort and high priority
-# ionice -c3 -p$$                    # Set the actual shell to idle priority
+    # ionice c3 -p123                    # set idle class for pid 123 (Linux only)
+    # ionice -c2 -n0 firefox             # Run firefox with best effort and high priority
+    # ionice -c3 -p$$                    # Set the actual shell to idle priority
 The last command is very useful to compile (or debug) a large project. Every command launched from this shell will have a lover priority. $$ is your shell pid (try echo $$).
 FreeBSD uses idprio/rtprio (0 = max priority, 31 = most idle):
-# idprio 31 make                     # compile in the lowest priority
-# idprio 31 -1234                    # set PID 1234 with lowest priority
-# idprio -t -1234                    # -t removes any real time/idle priority
+    # idprio 31 make                     # compile in the lowest priority
+    # idprio 31 -1234                    # set PID 1234 with lowest priority
+    # idprio -t -1234                    # -t removes any real time/idle priority
 Background/Foreground
 When started from a shell, processes can be brought in the background and back to the foreground with [Ctrl]-[Z] (^Z), bg and fg. List the processes with jobs. When needed detach from the terminal with disown.
-# ping cb.vu > ping.log
+    # ping cb.vu > ping.log
 ^Z                                   # ping is suspended (stopped) with [Ctrl]-[Z] 
-# bg                                 # put in background and continues running
-# jobs -l                            # List processes in background
+    # bg                                 # put in background and continues running
+    # jobs -l                            # List processes in background
 [1]  - 36232 Running                       ping cb.vu > ping.log
 [2]  + 36233 Suspended (tty output)        top
-# fg %2                              # Bring process 2 back in foreground
-# make                               # start a long compile job but need to leave the terminal
+    # fg %2                              # Bring process 2 back in foreground
+    # make                               # start a long compile job but need to leave the terminal
 ^Z                                   # suspended (stopped) with [Ctrl]-[Z] 
-# bg                                 # put in background and continues running
-# disown -h %1                       # detatch process from terminal, won't be killed at logout
+    # bg                                 # put in background and continues running
+    # disown -h %1                       # detatch process from terminal, won't be killed at logout
 No straight forward way to re-attach the process to a new terminal, try reptyr (Linux).
 Use nohup to start a process which has to keep running when the shell is closed (immune to hangups).
-# nohup ping -i 60 > ping.log &
+    # nohup ping -i 60 > ping.log &
 Top
 The program top displays running information of processes. See also the program htop from htop.sourceforge.net (a more powerful version of top) which runs on Linux and FreeBSD (ports/sysutils/htop/). While top is running press the key h for a help overview. Useful keys are:
 u [user name] To display only the processes belonging to the user. Use + or blank to see all users
@@ -453,13 +454,13 @@ k [pid] Kill the process with pid.
 R Toggle normal/reverse sort.
 Signals/Kill
 Terminate or send a signal with kill or killall.
-# ping -i 60 cb.vu > ping.log &
+    # ping -i 60 cb.vu > ping.log &
 [1] 4712
-# kill -s TERM 4712                  # same as kill -15 4712
-# killall -1 httpd                   # Kill HUP processes by exact name
-# pkill -9 http                      # Kill TERM processes by (part of) name
-# pkill -TERM -u www                 # Kill TERM processes owned by www
-# fuser -k -TERM -m /home            # Kill every process accessing /home (to umount)
+    # kill -s TERM 4712                  # same as kill -15 4712
+    # killall -1 httpd                   # Kill HUP processes by exact name
+    # pkill -9 http                      # Kill TERM processes by (part of) name
+    # pkill -TERM -u www                 # Kill TERM processes owned by www
+    # fuser -k -TERM -m /home            # Kill every process accessing /home (to umount)
 Important signals are:
 1       HUP (hang up)
 2       INT (interrupt)
@@ -475,7 +476,7 @@ Change permission and ownership with chmod and chown. The default umask can be c
 2 -w- write                          # For:       |--  Owner  --|   |- Group-|   |Oth|
 4 r-- read
   ugo=a                              u=user, g=group, o=others, a=everyone
-# chmod [OPTION] MODE[,MODE] FILE    # MODE is of the form [ugoa]*([-+=]([rwxXst]))
+    # chmod [OPTION] MODE[,MODE] FILE    # MODE is of the form [ugoa]*([-+=]([rwxXst]))
 # chmod 640 /var/log/maillog         # Restrict the log -rw-r-----
 # chmod u=rw,g=r,o= /var/log/maillog # Same as above
 # chmod -R o-r /home/*               # Recursive remove other readable for all users
@@ -2594,6 +2595,7 @@ Upload files from command line:
 + [Linux on smrtphone](https://tuxphones.com/2020-everything-running-linux-smartphone-guide/)
 + [Colorize CLI](https://danyspin97.org/blog/colorize-your-cli/)
 + [Rebol](http://www.rebol.com/docs/shell.html)
++ [Shmig](https://github.com/mbucc/shmig) - database migration tool
 
 
 #### Conferences
