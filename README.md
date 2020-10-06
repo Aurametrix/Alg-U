@@ -470,6 +470,9 @@ Important signals are:
 FILE SYSTEM
 Disk info | Boot | Disk usage | Opened files | Mount/remount | Mount SMB | Mount image | Burn ISO | Create image | Memory disk | Disk performance
 
+
+[Multitouch gesture test packages](https://bill.harding.blog/2020/10/06/q3-linux-touchpad-like-macbook-update-multitouch-gesture-test-packages-are-ready/)
+
 Permissions
 Change permission and ownership with chmod and chown. The default umask can be changed for all users in /etc/profile for Linux or /etc/login.conf for FreeBSD. The default umask is usually 022. The umask is subtracted from 777, thus umask 022 results in a permission 0f 755.
 1 --x execute                        # Mode 764 = exec/read/write | read/write | read
@@ -477,7 +480,7 @@ Change permission and ownership with chmod and chown. The default umask can be c
 4 r-- read
   ugo=a                              u=user, g=group, o=others, a=everyone
     # chmod [OPTION] MODE[,MODE] FILE    # MODE is of the form [ugoa]*([-+=]([rwxXst]))
-# chmod 640 /var/log/maillog         # Restrict the log -rw-r-----
+    # chmod 640 /var/log/maillog         # Restrict the log -rw-r-----
 # chmod u=rw,g=r,o= /var/log/maillog # Same as above
 # chmod -R o-r /home/*               # Recursive remove other readable for all users
 # chmod u+s /path/to/prog            # Set SUID bit on executable (know what you do!)
