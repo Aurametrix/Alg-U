@@ -84,6 +84,21 @@ Most commonly used network commands:
 
 + [Shell productivity tips and tricks](https://blog.balthazar-rouberol.com/shell-productivity-tips-and-tricks.html)
 
++ Bash error handling https://wizardzines.com/comics/bash-errors/
++ Use shellcheck (static analysis/linter) https://www.shellcheck.net/
+
++ Use shunit2 (unit tests) https://github.com/kward/shunit2
+
++ Use 'local' or 'readonly' to annotate your variables
+
++ Trap ctrl+c to gracefully exit (details here https://www.tothenew.com/blog/foolproof-your-bash-script-som...)
+
++ Stick to long-form options for readability (--delete over -d for example)
+
++ #!/usr/bin/env > #!/bin/bash for portability
+
++ Consider setting variable values in a file and importing it at the top of your script to improve refactoring
+
 #### Handy Aliases
 + alias untar='tar -zxvf '
 + alias wget='wget -c '
@@ -481,25 +496,30 @@ Change permission and ownership with chmod and chown. The default umask can be c
   ugo=a                              u=user, g=group, o=others, a=everyone
     # chmod [OPTION] MODE[,MODE] FILE    # MODE is of the form [ugoa]*([-+=]([rwxXst]))
     # chmod 640 /var/log/maillog         # Restrict the log -rw-r-----
-# chmod u=rw,g=r,o= /var/log/maillog # Same as above
-# chmod -R o-r /home/*               # Recursive remove other readable for all users
-# chmod u+s /path/to/prog            # Set SUID bit on executable (know what you do!)
-# find / -perm -u+s -print           # Find all programs with the SUID bit
-# chown user:group /path/to/file     # Change the user and group ownership of a file
-# chgrp group /path/to/file          # Change the group ownership of a file
-# chmod 640 `find ./ -type f -print` # Change permissions to 640 for all files
-# chmod 751 `find ./ -type d -print` # Change permissions to 751 for all directories
+    # chmod u=rw,g=r,o= /var/log/maillog # Same as above
+    # chmod -R o-r /home/*               # Recursive remove other readable for all users
+    # chmod u+s /path/to/prog            # Set SUID bit on executable (know what you do!)
+    # find / -perm -u+s -print           # Find all programs with the SUID bit
+    # chown user:group /path/to/file     # Change the user and group ownership of a file
+    # chgrp group /path/to/file          # Change the group ownership of a file
+    # chmod 640 `find ./ -type f -print` # Change permissions to 640 for all files
+    # chmod 751 `find ./ -type d -print` # Change permissions to 751 for all directories
+
 Disk information
-# diskinfo -v /dev/ad2               # information about disk (sector/size) FreeBSD
-# hdparm -I /dev/sda                 # information about the IDE/ATA disk (Linux)
-# fdisk /dev/ad2                     # Display and manipulate the partition table
-# smartctl -a /dev/ad2               # Display the disk SMART info
+
+    # diskinfo -v /dev/ad2               # information about disk (sector/size) FreeBSD
+    # hdparm -I /dev/sda                 # information about the IDE/ATA disk (Linux)
+    # fdisk /dev/ad2                     # Display and manipulate the partition table
+    # smartctl -a /dev/ad2               # Display the disk SMART info
+
 Boot
 FreeBSD
+
 To boot an old kernel if the new kernel doesn't boot, stop the boot at during the count down.
-# unload
-# load kernel.old
-# boot
+
+    # unload
+    # load kernel.old
+    # boot
 System mount points/Disk usage
 # mount | column -t                  # Show mounted file-systems on the system
 # df                                 # display free disk space and mounted devices
