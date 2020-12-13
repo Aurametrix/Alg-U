@@ -2619,7 +2619,7 @@ Upload files from command line:
 + [Colorize CLI](https://danyspin97.org/blog/colorize-your-cli/)
 + [Rebol](http://www.rebol.com/docs/shell.html)
 + [Shmig](https://github.com/mbucc/shmig) - database migration tool
-
++ [Shell literac](https://drewdevault.com/2020/12/12/Shell-literacy.html)
 
 #### Conferences
 
