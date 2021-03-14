@@ -568,39 +568,39 @@ COMMAND  PID USER   FD   TYPE DEVICE  SIZE  NODE NAME
 Xorg    3324 root    0w   REG    8,6 56296 12492 /var/log/Xorg.0.log
 Mount/remount a file system
 For example the cdrom. If listed in /etc/fstab:
-# mount /cdrom
+    # mount /cdrom
 Or find the device in /dev/ or with dmesg
 FreeBSD
-# mount -v -t cd9660 /dev/cd0c /mnt  # cdrom
-# mount_cd9660 /dev/wcd0c /cdrom     # other method
-# mount -v -t msdos /dev/fd0c /mnt   # floppy
+    # mount -v -t cd9660 /dev/cd0c /mnt  # cdrom
+    # mount_cd9660 /dev/wcd0c /cdrom     # other method
+    # mount -v -t msdos /dev/fd0c /mnt   # floppy
 Entry in /etc/fstab:
-# Device                Mountpoint      FStype  Options         Dump    Pass#
+    # Device                Mountpoint      FStype  Options         Dump    Pass#
 /dev/acd0               /cdrom          cd9660  ro,noauto       0       0
 To let users do it:
-# sysctl vfs.usermount=1  # Or insert the line "vfs.usermount=1" in /etc/sysctl.conf
+    # sysctl vfs.usermount=1  # Or insert the line "vfs.usermount=1" in /etc/sysctl.conf
 Linux
-# mount -t auto /dev/cdrom /mnt/cdrom   # typical cdrom mount command
-# mount /dev/hdc -t iso9660 -r /cdrom   # typical IDE
+    # mount -t auto /dev/cdrom /mnt/cdrom   # typical cdrom mount command
+    # mount /dev/hdc -t iso9660 -r /cdrom   # typical IDE
 # mount /dev/scd0 -t iso9660 -r /cdrom  # typical SCSI cdrom
 # mount /dev/sdc0 -t ntfs-3g /windows   # typical SCSI
 Entry in /etc/fstab:
 /dev/cdrom   /media/cdrom  subfs noauto,fs=cdfss,ro,procuid,nosuid,nodev,exec 0 0
 Mount a FreeBSD partition with Linux
 Find the partition number containing with fdisk, this is usually the root partition, but it could be an other BSD slice too. If the FreeBSD has many slices, they are the one not listed in the fdisk table, but visible in /dev/sda* or /dev/hda*.
-# fdisk /dev/sda                     # Find the FreeBSD partition
+    # fdisk /dev/sda                     # Find the FreeBSD partition
 /dev/sda3   *        5357        7905    20474842+  a5  FreeBSD
-# mount -t ufs -o ufstype=ufs2,ro /dev/sda3 /mnt
+    # mount -t ufs -o ufstype=ufs2,ro /dev/sda3 /mnt
 /dev/sda10 = /tmp; /dev/sda11 /usr   # The other slices
 Remount
 Remount a device without unmounting it. Necessary for fsck for example
-# mount -o remount,ro /              # Linux
-# mount -o ro -u /                   # FreeBSD
+    # mount -o remount,ro /              # Linux
+    # mount -o ro -u /                   # FreeBSD
 Copy the raw data from a cdrom into an iso image (default 512 blocksize might cause problems):
-# dd if=/dev/cd0c of=file.iso bs=2048
+    # dd if=/dev/cd0c of=file.iso bs=2048
 Virtualbox
 Allow a share on the host:
-# VBoxManage sharedfolder add "GuestName" --name "share" --hostpath "C:\hostshare"
+    # VBoxManage sharedfolder add "GuestName" --name "share" --hostpath "C:\hostshare"
 Mount share on guest (linux, FreeBSD)
 # sudo mount -t vboxsf share /home/vboxshare # -o uid=1000,gid=1000 (as appropriate)
 share /home/colin/share vboxsf defaults,uid=colin 0 0 # fstab entry
@@ -2620,6 +2620,7 @@ Upload files from command line:
 + [Rebol](http://www.rebol.com/docs/shell.html)
 + [Shmig](https://github.com/mbucc/shmig) - database migration tool
 + [Shell literac](https://drewdevault.com/2020/12/12/Shell-literacy.html)
++ [Eezy](https://github.com/simonmeulenbeek/Eezy) -  project automation system 
 
 #### Conferences
 
