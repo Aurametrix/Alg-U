@@ -1094,6 +1094,7 @@ SSH SCP
 Public key | Fingerprint | SCP | Tunneling | SSHFS
 
 See other tricks 25 ssh cmd
++ [Cron schedule expressions](https://crontab.guru/)   
 Public key authentication
 Connect to a host without password using public key authentication. The idea is to append your public key to the authorized_keys2 file on the remote host. For this example let's connect host-client to host-server, the key is generated on the client. With cygwin you might have to create your home directoy and the .ssh directory with # mkdir -p /home/USER/.ssh
 Use ssh-keygen to generate a key pair. ~/.ssh/id_dsa is the private key, ~/.ssh/id_dsa.pub is the public key.
