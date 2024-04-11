@@ -5,6 +5,7 @@ sh – Bourne shell  (bash -c 'paste <(echo 1) <(echo 2)')
 csh – C SHell   (csh -fc 'if (5 < 6) echo ok')
 
 bash – Bourne Again Shell
+    [ble.sh](https://github.com/akinomyoga/ble.sh) - /blɛʃ/ ―Bash Line Editor
 
 tcsh – enhanced C Shell  (tcsh -c "source my.tcshr; useMyTcshCmd")
 
