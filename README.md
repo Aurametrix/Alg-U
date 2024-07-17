@@ -6,6 +6,7 @@ csh – C SHell   (csh -fc 'if (5 < 6) echo ok')
 
 bash – Bourne Again Shell
     [ble.sh](https://github.com/akinomyoga/ble.sh) - /blɛʃ/ ―Bash Line Editor
+    [intro to bash scripting](https://github.com/bobbyiliev/introduction-to-bash-scripting)
 
 tcsh – enhanced C Shell  (tcsh -c "source my.tcshr; useMyTcshCmd")
 
