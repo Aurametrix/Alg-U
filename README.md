@@ -2625,7 +2625,8 @@ Upload files from command line:
 + [Rebol](http://www.rebol.com/docs/shell.html)
 + [Shmig](https://github.com/mbucc/shmig) - database migration tool
 + [Shell literac](https://drewdevault.com/2020/12/12/Shell-literacy.html)
-+ [Eezy](https://github.com/simonmeulenbeek/Eezy) -  project automation system 
++ [Eezy](https://github.com/simonmeulenbeek/Eezy) -  project automation system
++ [system restore tool for Linux](https://github.com/linuxmint/timeshift)
 
 #### Conferences
 
