@@ -2627,6 +2627,7 @@ Upload files from command line:
 + [Shell literac](https://drewdevault.com/2020/12/12/Shell-literacy.html)
 + [Eezy](https://github.com/simonmeulenbeek/Eezy) -  project automation system
 + [system restore tool for Linux](https://github.com/linuxmint/timeshift)
++ [Azure Linux](https://github.com/microsoft/azurelinux)
 
 #### Conferences
 
